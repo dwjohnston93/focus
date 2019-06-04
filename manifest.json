@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "Focus",
+    "version": "1.0",
+    "description": "Replace the contents of websites that distract you the most with inspirational quotes to keep you on task. Icon made by Smashicons from flaticon.com.",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://www.youtube.com/*"],
+          "run_at": "document_idle",
+          "js": ["jquery.js", "yt.js"]
+        }, 
+        {
+          "matches": ["https://www.facebook.com/*"],
+          "run_at": "document_idle",
+          "js": ["jquery.js", "fb.js"]
+        }
+    ], 
+    "icons": {
+        "16": "images/focus-icon16.png",
+        "32": "images/focus-icon32.png",
+        "48": "images/focus-icon48.png",
+        "128": "images/focus-icon128.png"
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "images/focus-icon16.png",
+            "32": "images/focus-icon32.png",
+            "48": "images/focus-icon48.png",
+            "128": "images/focus-icon128.png"
+        },
+        "default_popup": "popup.html"
+    },
+    "web_accessible_resources": ["images/focus-icon128.png"]
+}
