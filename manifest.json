@@ -11,12 +11,14 @@
         {
           "matches": ["https://www.youtube.com/*"],
           "run_at": "document_idle",
-          "js": ["jquery.js", "yt.js"]
+          "js": ["jquery.js", "yt.js"],
+          "css": ["index.css"]
         }, 
         {
           "matches": ["https://www.facebook.com/*"],
           "run_at": "document_idle",
-          "js": ["jquery.js", "fb.js"]
+          "js": ["jquery.js", "fb.js"],
+          "css": ["index.css"]
         }
     ], 
     "icons": {

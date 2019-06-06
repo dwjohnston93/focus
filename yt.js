@@ -4,13 +4,12 @@ let ytFeedParent = document.getElementById('page-manager').parentNode
 
 ytFeed.parentNode.removeChild(ytFeed);  
 
+let txtTag = document.createElement('div')
+txtTag.innerHTML = 'get that job!'
+txtTag.className = 'imgTxt'
+ytFeedParent.appendChild(txtTag)
+
 let imgTag = document.createElement("img")
-// image.src = "images/focus-icon128.png"
-// let imageURL = ytFeedParent.appendChild(image)
-
-console.log("7")
-
 let imageURL = chrome.runtime.getURL("images/focus-icon128.png")
 imgTag.src = imageURL
-
 ytFeedParent.appendChild(imgTag)
