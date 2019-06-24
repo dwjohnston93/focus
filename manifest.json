@@ -36,6 +36,6 @@
             "128": "images/focus-icon128.png"
         }
     },
-    "web_accessible_resources": ["images/focus-icon128.png", "https://picsum.photos/id/*/1200/800", "https://unsplash.it/1200/800?image=*", "https://picsum.photos/1200/800?image=*"],
+    "web_accessible_resources": ["images/focus-icon128.png", "images/facebook*.jpg"],
     "permissions": ["declarativeContent"]
 }
