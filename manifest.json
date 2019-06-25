@@ -36,6 +36,6 @@
             "128": "images/focus-icon128.png"
         }
     },
-    "web_accessible_resources": ["images/focus-icon128.png", "images/facebook*.jpg"],
+    "web_accessible_resources": ["images/focus-icon128.png", "images/facebook*.jpg", "images/youtube*.jpg"],
     "permissions": ["declarativeContent"]
 }

@@ -17,13 +17,15 @@ function rotateImage(){
     document.getElementById('fbCredit').innerHTML = `Photo by ${credits[imageNum]} on Unsplash`
 }
 
-//create inspirational quote and image crediting elements dynamically
+//create inspirational quote, credit, and image dynamically
 let quote= document.createElement('h2')
 quote.innerHTML = 'get that job!'
 quote.className = 'quote'
+
 let credit = document.createElement('h6')
 credit.id = 'fbCredit'
 credit.innerHTML = `Photo by ${credits[imageNum]} on Unsplash`
+
 fbFeedParent.appendChild(quote)
 fbFeedParent.appendChild(credit)
 

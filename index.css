@@ -2,7 +2,7 @@
     text-align: center;
     color: green;
     position: absolute; 
-    top: 0;
+    top: 25;
     left: 0;
     right: 0; 
     margin: 15px 0;
@@ -24,20 +24,21 @@
 }
 
 .credit {
-    bottom: 0;
-    text-align: right;
-    color: black;
+    color: gray;
+    text-align: left;
     position: absolute; 
-    top: 0;
-    left: 0;
+    top: 65px; 
+    left: 100px;
     right: 0; 
     margin: 15px 0;
     padding: 0 5px;
     font-family: impact;
-    font-size: 2.5em;
-    color: white;
-    letter-spacing: 1px;
-    text-shadow:2px 2px 0 #000,
+    font-size: 1em;
+
+}
+
+.ytQuote {
+    top: 75px;
 }
 
 .img {
