@@ -1,4 +1,4 @@
-.imgTxt {
+.quote {
     text-align: center;
     color: green;
     position: absolute; 
@@ -8,7 +8,7 @@
     margin: 15px 0;
     padding: 0 5px;
     font-family: impact;
-    font-size: 2.5em;
+    font-size: 4.5em;
     text-transform: uppercase;
     color: white;
     letter-spacing: 1px;
@@ -21,6 +21,23 @@
     0px -2px 0 #000,
     -2px 0px 0 #000,
     2px 2px 5px #000;
+}
+
+.credit {
+    bottom: 0;
+    text-align: right;
+    color: black;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0; 
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact;
+    font-size: 2.5em;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:2px 2px 0 #000,
 }
 
 .img {
