@@ -17,23 +17,32 @@ function rotateImage(){
     document.getElementById('fbCredit').innerHTML = `Photo by ${credits[imageNum]} on Unsplash`
 }
 
+console.log("3")
+
 //create inspirational quote, credit, and image dynamically
-let quote= document.createElement('h2')
-quote.innerHTML = 'get that job!'
-quote.className = 'quote'
+chrome.storage.sync.get(['quote'], function(result) {
+    console.log('Value currently is:' + result.quote)
+    let quoteElem= document.createElement('h2')
+    quoteElem.id = 'inspireQuote'
+    quoteElem.innerHTML = result.quote
+    quoteElem.className = 'quote'
+    fbFeedParent.appendChild(quoteElem)
+    fbFeedParent.appendChild(credit)
+    fbFeedParent.appendChild(imgTag)
+});
+
+
+
 
 let credit = document.createElement('h6')
 credit.id = 'fbCredit'
 credit.innerHTML = `Photo by ${credits[imageNum]} on Unsplash`
 
-fbFeedParent.appendChild(quote)
-fbFeedParent.appendChild(credit)
 
 let imgTag = document.createElement('img')
 let imageURL = chrome.runtime.getURL(`images/facebook${imageNum}.jpg`)
 imgTag.src = imageURL
 imgTag.className = 'img'
 imgTag.id = 'fbImg'
-fbFeedParent.appendChild(imgTag)
 
 document.addEventListener("click", rotateImage)

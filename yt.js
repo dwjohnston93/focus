@@ -19,7 +19,7 @@ function rotateImage(){
 
 //create inspirational quote, credit, and image dynamically
 let quote = document.createElement('h2')
-quote.innerHTML = 'get that job!'
+quote.innerHTML = document.getElementById('quote')
 quote.className = 'quote ytQuote'
 
 let credit = document.createElement('h6')

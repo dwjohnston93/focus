@@ -37,5 +37,5 @@
         }
     },
     "web_accessible_resources": ["images/focus-icon128.png", "images/facebook*.jpg", "images/youtube*.jpg"],
-    "permissions": ["declarativeContent"]
+    "permissions": ["declarativeContent", "storage"]
 }
