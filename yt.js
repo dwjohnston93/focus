@@ -15,6 +15,7 @@ let ytFeed = document.getElementById("page-manager")
 let ytFeedParent = document.getElementById('page-manager').parentNode
 ytFeed.parentNode.removeChild(ytFeed);  
 
+//function to cycle through images and quotes
 var imageNum = 0;
 function rotateImage(){
     if(imageNum === 2){
@@ -26,7 +27,7 @@ function rotateImage(){
     document.getElementById('ytCredit').innerHTML = `Photo by ${credits[imageNum]} on Unsplash`
 }
 
-//create inspirational quote, credit, and image dynamically
+//grab inspirational quote from storage and append quote, credit, and img to DOM
 chrome.storage.sync.get(['quote'], function(result) {
     let quoteElem= document.createElement('h2')
     quoteElem.id = 'inspireQuote'
@@ -37,15 +38,13 @@ chrome.storage.sync.get(['quote'], function(result) {
     ytFeedParent.appendChild(imgTag)
 });
 
-// let quote = document.createElement('h2')
-// quote.innerHTML = document.getElementById('quote')
-// quote.className = 'quote ytQuote'
-
+//create credit element 
 let credit = document.createElement('h6')
 credit.id = 'ytCredit'
 credit.className = 'credit'
 credit.innerHTML = `Photo by ${credits[imageNum]} on Unsplash`
 
+//create image element
 let imgTag = document.createElement("img")
 let imageURL = chrome.runtime.getURL(`images/youtube${imageNum}.jpg`)
 imgTag.src = imageURL
@@ -53,4 +52,5 @@ imgTag.className = 'img'
 imgTag.id = 'ytImg'
 ytFeedParent.appendChild(imgTag)
 
+//event listener for clicks to rotate image
 document.addEventListener("click", rotateImage)

@@ -15,6 +15,7 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 })
 
+//default quote that is loaded
 chrome.runtime.onInstalled.addListener(function() {
     chrome.storage.sync.set({quote: 'Keep Grinding!'}, function() {
       console.log("current quote:", quote);

@@ -10,11 +10,12 @@ function updateQuote(message){
 //attributions to inspirational images used
 let credits = ["Alex Haney", "Joshua Earle", "Malcolm Lightbody"]
 
-//grab fb's feed element and parent, and remove the feed
+//grab inspirational quote from storage and append quote, credit, and img to DOM
 let fbFeed = document.getElementById('content_container')
 let fbFeedParent =  document.getElementById('content_container').parentNode
 fbFeed.parentNode.removeChild(fbFeed)
 
+//function to cycle through images and quotes
 var imageNum = 0;
 function rotateImage(){
     if(imageNum === 2){
@@ -26,9 +27,7 @@ function rotateImage(){
     document.getElementById('fbCredit').innerHTML = `Photo by ${credits[imageNum]} on Unsplash`
 }
 
-console.log("1")
-
-//create inspirational quote, credit, and image dynamically
+//grab inspirational quote from storage and append quote, credit, and img to DOM
 chrome.storage.sync.get(['quote'], function(result) {
     let quoteElem= document.createElement('h2')
     quoteElem.id = 'inspireQuote'
@@ -39,15 +38,17 @@ chrome.storage.sync.get(['quote'], function(result) {
     fbFeedParent.appendChild(imgTag)
 });
 
+//create credit element 
 let credit = document.createElement('h6')
 credit.id = 'fbCredit'
 credit.innerHTML = `Photo by ${credits[imageNum]} on Unsplash`
 
-
+//create image element
 let imgTag = document.createElement('img')
 let imageURL = chrome.runtime.getURL(`images/facebook${imageNum}.jpg`)
 imgTag.src = imageURL
 imgTag.className = 'img'
 imgTag.id = 'fbImg'
 
+//event listener for clicks to rotate image
 document.addEventListener("click", rotateImage)

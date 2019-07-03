@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', userInput, false);
 
-//takes 
+//sends user input as message to fb and yt.js
 function sendInput(input) { 
     console.log("input value is: " + input.value);
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -10,15 +10,11 @@ function sendInput(input) {
             })
         });
     });
-    // do processing with data
-    // you need to right click the extension icon and choose "inspect popup"
-    // to view the messages appearing on the console.
 }
 
+//listens for change quote buton and sends user input to sendInput()
 function userInput() {    
   document.getElementById('changeQuote').addEventListener('click', 
     function() { sendInput(document.getElementById('quoteInput'));
   });
-
-  // you can add listeners for other objects ( like other buttons ) here 
 }
