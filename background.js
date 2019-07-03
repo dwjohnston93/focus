@@ -16,7 +16,7 @@ chrome.runtime.onInstalled.addListener(function() {
 })
 
 chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.sync.set({quote: 'Get that job!'}, function() {
+    chrome.storage.sync.set({quote: 'Keep Grinding!'}, function() {
       console.log("current quote:", quote);
     });
   });

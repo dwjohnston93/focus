@@ -1,3 +1,12 @@
+//listener that updates quote to the user input
+chrome.runtime.onMessage.addListener(updateQuote);
+function updateQuote(message){
+    newQuote = message.input;
+    if (typeof newQuote === 'string') {
+        document.getElementById('inspireQuote').innerHTML = newQuote
+    }
+}
+
 //attributions to inspirational images used
 let credits = ["Alex Haney", "Joshua Earle", "Malcolm Lightbody"]
 
@@ -17,11 +26,10 @@ function rotateImage(){
     document.getElementById('fbCredit').innerHTML = `Photo by ${credits[imageNum]} on Unsplash`
 }
 
-console.log("3")
+console.log("1")
 
 //create inspirational quote, credit, and image dynamically
 chrome.storage.sync.get(['quote'], function(result) {
-    console.log('Value currently is:' + result.quote)
     let quoteElem= document.createElement('h2')
     quoteElem.id = 'inspireQuote'
     quoteElem.innerHTML = result.quote
@@ -30,9 +38,6 @@ chrome.storage.sync.get(['quote'], function(result) {
     fbFeedParent.appendChild(credit)
     fbFeedParent.appendChild(imgTag)
 });
-
-
-
 
 let credit = document.createElement('h6')
 credit.id = 'fbCredit'
